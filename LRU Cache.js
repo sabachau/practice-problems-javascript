@@ -61,13 +61,11 @@ LRUCache.prototype.get = function(key) {
 };
 
 /*
-First of all for every set request, we need to check if this is the first element being added to the list? If so, we must set the tail to 
-point to this node.
-If not, we next check if the node is already present in the list? If it is, we'll rewire the connections
-by updating the incoming prev and next node pointers to this node, and move it to the head.
-If not present, then we need to check if after adding to the list, if the no of nodes in cache would exceed the capacity of the cache? 
-If so, we'll remove the least recently used node (which will be at the tail of the list).
-At the end, we'll add this node to the map.
+First of all for every set request, we need to check if this is the first element being added to the list? If so, we must set the 
+tail to point to this node.If not, we next check if the node is already present in the list? If it is, we'll rewire the connections
+by updating the incoming prev and next node pointers to this node, and move it to the head. If not present, then we need to check if
+after adding to the list, if the no of nodes in cache would exceed the capacity of the cache? If so, we'll remove the least recently 
+used node (which will be at the tail of the list).At the end, we'll add this node to the map.
 */
 
 /** 
