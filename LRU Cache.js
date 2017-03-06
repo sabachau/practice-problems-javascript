@@ -21,15 +21,16 @@ var LRUCache = function(capacity) {
 
  
  /*
- For every get request from the cache, the most recently accessed node must be
- moved to the front of the linked list. Therefore first check will be if the node is already in front of the list,
- we can simply return the value and no other modifications would be necessary. 
- If the node is not in the front of the linked list, then it is either in the middle or the tail itself(special case). If at the
- tail, we must update the tail pointer. If in the middle, we must remove it and hence reset all the incoming pointers
- to this node(from its prev and next).
- At the end, we'll move the node to the front of the list by updating 
+ 
+ For every get request from the cache, the most recently accessed node must be moved to the front of the linked list. Therefore 
+ first check will be if the node is already in front of the list, we can simply return the value and no other modifications would
+ be necessary. If the node is not in the front of the linked list, then it is either in the middle or the tail itself(special case).
+ If at the tail, we must update the tail pointer. If in the middle, we must remove it and hence reset all the incoming pointers
+ to this node(from its prev and next). At the end, we'll move the node to the front of the list by updating-
+ 
  (i) the prev pointer of the head of the linked list to point to this node and 
  (ii) set the next pointer of the new node to point to head
+ 
  */
  
  /** 
